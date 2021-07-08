@@ -1,0 +1,100 @@
+SQL 
+
+-SQL is case insensitive.
+
+A primary key is a field in the table that uniquely identifies the table records.
+
+The primary key's main features:
+- It must contain a unique value for each row.
+- It cannot contain NULL values.
+
+- Tables are limited to ONE primary key each.
+- The primary key's value must be different for each row.
+
+SQL is used to access and manipulate a database.
+MySQL is a program that understands SQL.
+
+SQL can:
+- insert, update, or delete records in a database.
+- create new databases, table, stored procedures, views.
+- retrieve data from a database, etc.
+
+-SHOW DATABASES
+-SHOW TABLES
+-SHOW COLUMNS FROM customers
+
+SHOW COLUMNS displays the following values for each table column:
+
+Field: column name
+Type: column data type
+Key: indicates whether the column is indexed
+Default: default value assigned to the column
+Extra: may contain any additional information that is available about a given column
+
+- SELECT column_list FROM table_name
+
+Remember to end each SQL statement with a semicolon to indicate that the statement is complete and ready to be interpreted.
+
+- Select first name, last name, city from customers
+- Select * from customers
+- Select distinct column_1, column_2 from table_name;
+- Select column_list from table_name limit (number of records)
+- SELECT column_name FROM table_name OFFSET 3 LIMIT 5 
+- SELECT column_name FROM table_name LIMIT 3, 5 (another way)
+
+FULLY QUALIFIED NAMES:
+- SELECT customers.list FROM customers;
+
+ORDER BY (used to sort the data) 
+- By default, it will sort in ascending order 
+- SELECT * FROM customers ORDER BY FirstName
+- SELECT * FROM customers ORDER BY FirstName, Age
+
+COMBINING ORDER BY AND LIMIT
+- SELECT * FROM cakes ORDER BY calories LIMIT 3
+
+THE WHERE CLAUSE: 
+- SELECT column_list FROM table_name WHERE condition;
+
+SQL OPERATORS: 
+
+Comparison Operators and Logical Operators are used in the WHERE clause to filter the data to be selected.
+
+The following comparison operators can be used in the WHERE clause:
+
+￼
+
+THE BETWEEN OPERATOR: 
+- SELECT column_names FROM table_name WHERE column_name BETWEEN value1 and value2;
+
+TEXT VALUES: 
+When working with text columns, surround any text that appears in the statement with single quotation marks (').
+
+LOGICAL OPERATORS:
+
+Logical operators can be used to combine two Boolean values and return a result of true, false, or null.
+The following operators can be used:
+￼
+When retrieving data using a SELECT statement, use logical operators in the WHERE clause to combine multiple conditions.
+
+THE OR OPERATOR:
+
+The following table describes how the logical OR operator functions:
+￼
+
+
+Combining AND & OR
+
+The SQL AND and OR conditions may be combined to test multiple conditions in a query.
+These two operators are called conjunctive operators.
+
+- SELECT * FROM customers WHERE city = ‘New York’ AND (Age=30 OR Age=35);
+
+THE IN and NOT IN OPERATOR:
+- SELECT * FROM customers WHERE City in (‘New York’, ‘Los Angeles’, ‘Chicago’)
+- SELECT * FROM customers WHERE City NOT IN (‘New York’, ‘Los Angeles’, ‘Chicago’)
+
+THE CONCAT FUNCTION: 
+- SELECT CONCAT (‘Firstname’, ‘, ‘ ,’Lastname’) FROM customers;
+- SELECT CONCAT (‘Firstname’, ‘, ‘ ,’Lastname’) AS new_column FROM customers;
+
